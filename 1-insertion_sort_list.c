@@ -10,8 +10,11 @@
 void insertion_sort_list(listint_t **list)
 {
 	unsigned int cont = 0, conth = 0;
+	listint_t *h_2 = NULL, *tmp = NULL;
 
-	listint_t *h_2 = *list, *tmp = *list;
+	if (list == NULL)
+		return;
+	h_2 = *list, tmp = *list;
 
 	if (h_2->next == NULL)
 		return;
