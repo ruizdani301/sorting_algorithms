@@ -20,9 +20,9 @@ void insertion_sort_list(listint_t **list)
 	/*	return;*/
 	while (tmp != NULL)
 	{
+		if (tmp->next == NULL)
+			return;
 		tmp = tmp->next;
-			if (tmp == NULL)
-				return;
 		cont = cont + 1, conth = cont, h_2 = tmp;
 		while (h_2->n < h_2->prev->n)
 		{
