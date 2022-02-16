@@ -39,11 +39,7 @@ void insertion_sort_list(listint_t **list)
 				h_2->next->next->prev = h_2->next, h_2->next->prev = h_2;
 			}
 			else if (h_2->next == NULL)
-			{
-				h_2->next = h_2->prev, h_2->prev->next = NULL;
-				h_2->prev = h_2->prev->prev, h_2->prev->next = h_2;
-				h_2->next->prev = h_2;
-			}
+				swap(h_2);
 			print_list(*list), conth--;
 			if (tmp == h_2)
 				tmp = tmp->next;
@@ -52,4 +48,14 @@ void insertion_sort_list(listint_t **list)
 		}
 
 	}
+}
+/**
+ * swap - check the code
+ * @h_2:variable
+ */
+void swap(listint_t *h_2)
+{
+	h_2->next = h_2->prev, h_2->prev->next = NULL;
+	h_2->prev = h_2->prev->prev, h_2->prev->next = h_2;
+	h_2->next->prev = h_2;
 }
